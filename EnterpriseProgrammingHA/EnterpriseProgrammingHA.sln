@@ -13,9 +13,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntProgHA.Infra.Data", "Ent
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntProgHA.UI.Mvc", "EntProgHA.UI.Mvc", "{6B6E99B6-3260-4D50-8078-5F450FFF9F63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntProgHA.Mvc", "EntProgHA.Mvc\EntProgHA.Mvc.csproj", "{1D87216C-18FE-4C69-9937-6DB1BCEA5D17}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D87216C-18FE-4C69-9937-6DB1BCEA5D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D87216C-18FE-4C69-9937-6DB1BCEA5D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D87216C-18FE-4C69-9937-6DB1BCEA5D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D87216C-18FE-4C69-9937-6DB1BCEA5D17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1D87216C-18FE-4C69-9937-6DB1BCEA5D17} = {6B6E99B6-3260-4D50-8078-5F450FFF9F63}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D321603-0338-4F35-9419-71C850A7F9C8}
