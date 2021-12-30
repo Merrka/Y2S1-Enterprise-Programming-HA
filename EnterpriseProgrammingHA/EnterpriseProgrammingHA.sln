@@ -3,6 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntProgHA.Application", "EntProgHA.Application", "{B0331B9F-39E8-4B5B-9824-AABBE302E870}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntProgHA.Domain", "EntProgHA.Domain", "{B47409A4-2E7E-47A2-8A9E-436CECCE96BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntProgHA.Infra.IoC", "EntProgHA.Infra.IoC", "{7C1047A6-002B-4EB0-8459-0AB4F863F3DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntProgHA.Infra.Data", "EntProgHA.Infra.Data", "{9DCC24ED-7647-4023-B7DE-C64FC73FFEF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntProgHA.UI.Mvc", "EntProgHA.UI.Mvc", "{6B6E99B6-3260-4D50-8078-5F450FFF9F63}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
