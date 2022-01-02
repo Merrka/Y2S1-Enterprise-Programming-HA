@@ -1,3 +1,4 @@
+using EntProgHA.Infra.Data.Context;
 using EntProgHA.Mvc.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,6 +33,12 @@ namespace EntProgHA.Mvc
                     Configuration.GetConnectionString("EntProgHADBConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddDbContext<FileTransferDBContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("FileTransferDBConnection"));
+            });
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
