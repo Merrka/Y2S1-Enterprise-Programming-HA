@@ -7,6 +7,6 @@ namespace EntProgHA.Application.Interfaces
 {
     public interface IFileTransferService
     {
-        IEnumerable<FileTransferViewModel> GetFileTransfers();
+        FileTransferViewModel GetFileTransfers();
     }
 }
