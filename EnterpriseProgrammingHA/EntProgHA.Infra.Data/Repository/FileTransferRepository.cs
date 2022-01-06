@@ -9,9 +9,9 @@ namespace EntProgHA.Infra.Data.Repository
 {
     public class FileTransferRepository : IFileTransferRepository
     {
-        private FileTransferDBContext _ctx;
+        private FileTransferContext _ctx;
 
-        public FileTransferRepository(FileTransferDBContext ctx)
+        public FileTransferRepository(FileTransferContext ctx)
         {
             _ctx = ctx;
         }

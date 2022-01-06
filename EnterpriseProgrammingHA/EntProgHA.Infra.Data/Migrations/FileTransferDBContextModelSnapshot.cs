@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EntProgHA.Infra.Data.Migrations
 {
-    [DbContext(typeof(FileTransferDBContext))]
+    [DbContext(typeof(FileTransferContext))]
     partial class FileTransferDBContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -4,10 +4,16 @@
         @foreach (var fileTransfer in Model.FileTransfers)
         {
             <div class="filetransfer-file-container">
-                <div class="filetransfer-file">
+                <div>
+                    <span>@fileTransfer.Title</span>
+                    <br />
+                    <span>@fileTransfer.Message</span>
+                    <br />
+                    <a href="~/files/@fileTransfer.FileUrl">File is Here</a>
 
                 </div>
             </div>
+
         }
     </div>
 </div>

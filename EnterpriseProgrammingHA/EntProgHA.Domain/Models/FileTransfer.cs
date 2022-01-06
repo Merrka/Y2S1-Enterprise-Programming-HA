@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace EntProgHA.Domain.Models
 {
     public class FileTransfer
     {
+        [Key]
         public int Id { get; set; }
         public string SenderEmail { get; set; }
         public string RecieverEmail { get; set; }

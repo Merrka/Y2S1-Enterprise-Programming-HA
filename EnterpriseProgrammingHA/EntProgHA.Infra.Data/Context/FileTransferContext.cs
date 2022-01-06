@@ -6,9 +6,9 @@ using System.Text;
 
 namespace EntProgHA.Infra.Data.Context
 {
-    public class FileTransferDBContext : DbContext
+    public class FileTransferContext : DbContext
     {
-        public FileTransferDBContext(DbContextOptions options) : base(options)
+        public FileTransferContext(DbContextOptions options) : base(options)
         { }
           
         public DbSet<FileTransfer> FileTransfers { get; set; }

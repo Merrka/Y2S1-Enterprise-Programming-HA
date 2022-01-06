@@ -35,7 +35,7 @@ namespace EntProgHA.Mvc
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddDbContext<FileTransferDBContext>(options =>
+            services.AddDbContext<FileTransferContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("FileTransferDBConnection"));
             });
