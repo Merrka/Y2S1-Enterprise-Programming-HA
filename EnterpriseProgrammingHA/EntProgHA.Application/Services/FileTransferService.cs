@@ -22,5 +22,19 @@ namespace EntProgHA.Application.Services
                 FileTransfers = _fileTransferRepository.GetFileTransfers()
             };
         }
+        public void AddFileTransfer(AddFileTransferViewModel model)
+        {
+            _fileTransferRepository.AddFileTransfer(
+                new Domain.Models.FileTransfer()
+                {
+                    SenderEmail = model.SenderEmail,
+                    RecieverEmail = model.RecieverEmail,
+                    Title = model.Title,
+                    Message = model.Message,
+                    Password = model.Password,
+                    FileUrl = model.FileUrl
+
+                });
+        }
     }
 }

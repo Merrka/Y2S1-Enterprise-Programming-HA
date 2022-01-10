@@ -7,6 +7,8 @@ namespace EntProgHA.Domain.Interfaces
 {
     public interface IFileTransferRepository
     {
-        IEnumerable<FileTransfer> GetFileTransfers();
+        public IEnumerable<FileTransfer> GetFileTransfers();
+
+        public void AddFileTransfer(FileTransfer ft);
     }
 }

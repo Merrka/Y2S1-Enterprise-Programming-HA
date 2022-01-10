@@ -19,5 +19,11 @@ namespace EntProgHA.Infra.Data.Repository
         {
             return _ctx.FileTransfers;
         }
+
+        public void AddFileTransfer(FileTransfer ft)
+        {
+            _ctx.FileTransfers.Add(ft);
+            _ctx.SaveChanges();
+        }
     }
 }
