@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using RestSharp;
+using RestSharp.Authenticators;
 
 namespace EntProgHA.Mvc.Controllers
 {
@@ -48,26 +50,19 @@ namespace EntProgHA.Mvc.Controllers
                 {
                     if (File != null)
                     {
-                        //1. to generate a new unique filename
-                        //5389205C-813B-4AFA-A453-B912C30BF933.jpg
                         string newFilename = Guid.NewGuid() + Path.GetExtension(File.FileName);
-
-                        //2. find what the absolute path to the folder Files is
-                        //C:\Users\attar\Source\Repos\SWD62BEP2021v2\Presentation\Files\5389205C-813B-4AFA-A453-B912C30BF933.jpg
-
-                        //hostEnv.ContentRootPath : C:\Users\attar\Source\Repos\SWD62BEP2021v2\Presentation
-                        //hostEnv.WebRootPath:  C:\Users\attar\Source\Repos\SWD62BEP2021v2\Presentation\wwwroot
-
-                        string absolutePath = _hostEnv.WebRootPath + "\\Files";
+                        string absolutePath = _hostEnv.WebRootPath + "\\files";
                         string absolutePathWithFilename = absolutePath + "\\" + newFilename;
-                        model.FileUrl = "\\Files\\" + newFilename;
-                        //3. do the transfer/saving of the actual physical file
+                        model.FileUrl = newFilename;
 
                         using (FileStream fs = new FileStream(absolutePathWithFilename, FileMode.CreateNew, FileAccess.Write))
                         {
                             File.CopyTo(fs);
                             fs.Close();
                         }
+
+                        //SendSimpleMessage();
+                        //Console.WriteLine(SendSimpleMessage().Content.ToString());
                     }
 
 
@@ -79,11 +74,24 @@ namespace EntProgHA.Mvc.Controllers
             {
                 ViewBag.Error = "FileTransfer wasn't added successfully";
             }
-            
             return View(model);
         }
         //create new method for mailgun code
-
+        /*public static IRestResponse SendSimpleMessage()
+        {
+            RestClient client = new RestClient();
+            client.BaseUrl = new Uri("https://api.mailgun.net/v3/sandbox93754b4e116544abb2b65d3c43d8ec6a.mailgun.org");
+            client.Authenticator = new HttpBasicAuthenticator("api", "68502337aeb36f964dd1a090996d8ca2-76f111c4-ed598f2c");
+            RestRequest request = new RestRequest();
+            request.AddParameter("domain", "sandbox93754b4e116544abb2b65d3c43d8ec6a.mailgun.org", ParameterType.UrlSegment);
+            request.Resource = "{domain}/messages";
+            request.AddParameter("from", "admin@merrka.com");
+            request.AddParameter("to", "attard.kurt.2001@gmail.com");
+            request.AddParameter("subject", "Hello");
+            request.AddParameter("text", "Testing some Mailgun awesomness!");
+            request.Method = Method.POST;
+            return client.Execute(request);
+        }*/
 
 
     }
